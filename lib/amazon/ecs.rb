@@ -186,7 +186,7 @@ module Amazon
       end
 
       def top_sellers
-        (res.doc/"TopSeller").collect{|item| Amazon::Element.new(item)}
+        (@doc/"TopSeller").collect{|item| Amazon::Element.new(item)}
       end
 
       # Return total results.
