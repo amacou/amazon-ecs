@@ -185,6 +185,10 @@ module Amazon
         @item_page ||= Element.get(@doc, "//ItemPage").to_i
       end
 
+      def top_seller
+        (res.doc/"TopSeller").collect{|item| Amazon::Element.new(item)}
+      end
+
       # Return total results.
       def total_results
         @total_results ||= Element.get(@doc, "//TotalResults").to_i
