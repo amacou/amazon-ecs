@@ -185,7 +185,7 @@ module Amazon
         @item_page ||= Element.get(@doc, "//ItemPage").to_i
       end
 
-      def top_seller
+      def top_sellers
         (res.doc/"TopSeller").collect{|item| Amazon::Element.new(item)}
       end
 
